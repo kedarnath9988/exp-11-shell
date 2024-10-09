@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 USER=$(id -u )
-TIME=$( data +%F-%H-%M-%S )
+TIME=$( date +%F-%H-%M-%S )
 SCRIPT=$( echo $0 | cut -d "." -f1 )
 LOG_FILE=/tmp/$SCRIPT-$TIME.log
 
@@ -19,6 +19,7 @@ VALIDATE(){
     else 
         echo -e "$R $@ failure .. $N"
         exit 1 
+    fi 
 }
 
 echo "script is " $0 
