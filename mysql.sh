@@ -24,5 +24,5 @@ then
     echo  -e "$G  password already setuped successfully $N"
 else 
     mysql -h db.dawskedarnath.online --set-root-pass ${PASSWORD_MYSQL}  &>>$LOG_FILE
-    VALIDATE $? "installing mysqql-server"
+    VALIDATE $? "setting mysql passwd "
 fi 
