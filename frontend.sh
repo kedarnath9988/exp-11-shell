@@ -21,6 +21,9 @@ VALIDATE $? "removing the default content"
 curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip  &>>$LOG_FILE
 VALIDATE $? "downlode the frontend code"
 
+cd /user/share/nginx/html/ &>>$LOG_FILE
+VALIDATE $? "moving to the html folder"
+
 unzip /tmp/frontend.zip &>>$LOG_FILE
 VALIDATE $? "unzip the frontend code"
 
