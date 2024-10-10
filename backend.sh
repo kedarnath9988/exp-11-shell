@@ -22,7 +22,7 @@ else
     VALIDATE $? "creating expense user"
 fi 
 
-mkdir -p /app
+mkdir -p /app &>>LOG_FILE
 VALIDATE $? "/app creating "
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE
@@ -35,6 +35,9 @@ VALIDATE $? "unzip the code "
 
 cd /app &>>$LOG_FILE
 VALIDATE $? "moving to /app"
+
+npm install -y &>>LOG_FILE
+VALIDATE $? "downloding the nodejs dependences"
 
 cp /home/ec2-user/exp-11-shell/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE
 VALIDATE $? "copying the service file" 
