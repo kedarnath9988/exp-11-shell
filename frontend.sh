@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./common.sh
+
 USER_VALID
 
 echo "now you are in the Frontend module"
