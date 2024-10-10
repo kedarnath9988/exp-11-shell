@@ -39,7 +39,7 @@ VALIDATE $? "moving to /app"
 cp /home/ec2-user/exp-11-shell/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE
 VALIDATE $? "copying the service file" 
 
-systemctl daemon-reload backend &>>$LOG_FILE
+systemctl daemon-reload  &>>$LOG_FILE
 VALIDATE $? "daemon-reload "
 
 systemctl enable backend &>>$LOG_FILE
