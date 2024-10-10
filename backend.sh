@@ -36,7 +36,7 @@ VALIDATE $? "unzip the code "
 cd /app &>>$LOG_FILE
 VALIDATE $? "moving to /app"
 
-cp /home/ec2-user/exp-11-shell/backend.service /etc/system/systemd/backend.service &>>$LOG_FILE
+cp /home/ec2-user/exp-11-shell/backend.service /etc/systemd/system/backend.service &>>$LOG_FILE
 VALIDATE $? "copying the service file" 
 
 systemctl daemon-reload backend &>>$LOG_FILE
