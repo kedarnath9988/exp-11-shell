@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./common.sh
+source ./common.sh 
 
 USER_VALID
 
@@ -18,7 +18,7 @@ VALIDATE $? "stsrting nginx"
 rm -rf /user/share/nginx/html/* &>>$LOG_FILE
 VALIDATE $? "removing the default content"
 
-curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$loading
+curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip  &>>$LOG_FILE
 VALIDATE $? "downlode the frontend code"
 
 unzip /tmp/frontend.zip &>>$LOG_FILE
