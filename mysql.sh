@@ -23,6 +23,6 @@ if [ $? -eq 0 ]
 then 
     echo  -e "$G  password already setuped successfully $N"
 else 
-    mysql -h db.dawskedarnath.online --set-root-pass ${PASSWORD_MYSQL}  &>>$LOG_FILE
+    mysql_secure_installation --set-root-pass ${PASSWORD_MYSQL}  &>>$LOG_FILE
     VALIDATE $? "setting mysql passwd "
 fi 
